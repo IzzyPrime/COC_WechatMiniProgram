@@ -1,0 +1,19 @@
+<van-notice-bar
+  mode="closeable"
+  text="您上传的阵型经过管理员审核后才会显示在主页，请您谅解。"
+/>
+<form bindsubmit="onSubmit">
+	<van-cell-group>
+		<van-cell title="请填写以下信息："/>
+		<van-field value="{{ des }}" label="描述" placeholder="请描述一下您的阵型的特点" bind:change="desChange" />
+		<van-field value="{{ link }}" label="链接" placeholder="请输入您的阵型链接" bind:change="linkChange" />
+		<van-field value="{{ hq }}" label="大本等级" placeholder="请输入该阵型的适用大本等级" bind:change="hqChange" />
+		<van-cell title="图片预览："/>
+		<van-image width="100vw" height="75vw" fit="cover" src="{{image}}" />
+	</van-cell-group>
+
+
+	
+	<button bindtap="selectImage">上传图片</button>
+	<button form-type="submit">提交</button>
+</form>

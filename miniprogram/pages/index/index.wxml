@@ -1,0 +1,25 @@
+<van-dropdown-menu>
+	<van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onSwitchChange1"/>
+	<van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="onSwitchChange2"/>
+</van-dropdown-menu>
+
+<vent-cell-grounp>
+
+	<block wx:for="{{info}}">
+		<van-row>
+			<van-col span="24">
+				<van-panel title="{{item.des}}" desc="人气：{{item.hot}}" status="{{item.hq2}} 本">
+				</van-panel>
+			</van-col>
+			<van-col span="24">
+				<van-image width="100vw" height="75vw" fit="cover" src="{{item.img}}" />
+			</van-col>
+			<van-col offset="17">
+				<view bindtap='copyText' data-text="{{item}}">
+					<van-button plain type="info">复制链接</van-button>
+				</view>
+			</van-col>
+		</van-row>
+		<van-divider />
+	</block>
+</vent-cell-grounp>

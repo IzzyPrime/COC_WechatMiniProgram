@@ -1,0 +1,11 @@
+<van-cell title="" />
+<van-cell title="" />
+<van-cell title="" />
+<van-cell title="加入我们" is-link bind:click="showPopup" />
+<van-popup show="{{ show }}" position="bottom" custom-style="height: 30%;" bind:close="onClose" round>
+	<van-cell title="" />
+	<van-cell title="" />
+	<van-cell title="" />
+  <van-cell title="现在只有我一个人XD" />
+	<van-cell title="QQ 528184320" />
+</van-popup>
