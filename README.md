@@ -1,2 +1,1 @@
-# coc
-WechatMiniProgram for cocer.
+[开发笔记](https://libo.ink/c230/)
