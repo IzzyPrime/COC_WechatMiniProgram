@@ -58,30 +58,44 @@ Page({
   },
 
   //根据选择刷新主页
-  onSwitchChange:function(){
-    if(this.data.value2 === "timestamp"){
-      if(this.data.value1 === "0"){
-        this.getData();
-      }else{
-        this.getData2(null,this.data.value1)
+  onSwitchChange:function(fresh){
+    if(!fresh){
+      if(this.data.value2 === "timestamp"){
+        if(this.data.value1 === "0"){
+          this.getData();
+        }else{
+          this.getData2(null,this.data.value1)
+        }
+      }
+      else{//hot
+        if(this.data.value1 === "0"){
+          this.getDataHot();
+        }else{
+          this.getDataHot2(null,this.data.value1)
+        }
       }
     }
-    else{//hot
-      if(this.data.value1 === "0"){
-        this.getDataHot();
-      }else{
-        this.getDataHot2(null,this.data.value1)
+    else{
+      if(this.data.value2 === "timestamp"){
+        if(this.data.value1 === "0"){
+          this.getData(res =>{wx.stopPullDownRefresh();});
+        }else{
+          this.getData2(res =>{wx.stopPullDownRefresh();},this.data.value1)
+        }
+      }
+      else{//hot
+        if(this.data.value1 === "0"){
+          this.getDataHot(res =>{wx.stopPullDownRefresh();});
+        }else{
+          this.getDataHot2(res =>{wx.stopPullDownRefresh();},this.data.value1)
+        }
       }
     }
   },
 
   //下拉刷新
   onPullDownRefresh:function(){
-    this.getData(res => {
-      wx.stopPullDownRefresh({
-        complete: (res) => {},
-      })
-    })
+    this.onSwitchChange(1)
   },
 
   
