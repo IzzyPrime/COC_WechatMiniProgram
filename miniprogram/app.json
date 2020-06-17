@@ -24,7 +24,8 @@
     "van-panel": "@vant/weapp/panel/index",
     "van-field": "@vant/weapp/field/index",
     "van-popup": "@vant/weapp/popup/index",
-    "van-notice-bar": "@vant/weapp/notice-bar/index"
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-skeleton": "@vant/weapp/skeleton/index"
   },
   "tabBar": {
     "list": [

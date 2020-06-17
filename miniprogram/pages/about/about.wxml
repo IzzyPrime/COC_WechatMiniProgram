@@ -1,11 +1,18 @@
-<van-cell title="" />
-<van-cell title="" />
-<van-cell title="" />
-<van-cell title="加入我们" is-link bind:click="showPopup" />
+<view class="container">
+	<view class="userinfo">
+		<van-button round type="info" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" color="linear-gradient(to left, #4bb0ff, #6149f6)"> 获取头像昵称 </van-button>
+		<block wx:else>
+			<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+		</block>
+	</view>
+	<view class="joinus" bindtap="showPopup">
+		<van-button round type="info" color="linear-gradient(to right, #4bb0ff, #6149f6)">加入我们</van-button>
+	</view>
+</view>
+
 <van-popup show="{{ show }}" position="bottom" custom-style="height: 30%;" bind:close="onClose" round>
 	<van-cell title="" />
-	<van-cell title="" />
-	<van-cell title="" />
-  <van-cell title="现在只有我一个人XD" />
+	<van-cell title="现在只有我一个人XD" />
 	<van-cell title="QQ 528184320" />
 </van-popup>
